@@ -1,7 +1,8 @@
 # Cara Menggunakan Program INI.
 
 1. Download / git clone https://github.com/Bellukchips/tokoMainan.git 
-2. Letakan pada folder htdocs xampp  
+2. Letakan pada folder htdocs xampp
+
 *Disclaimer*
 <h4>Jangan DiLetakan dalam folder lain</h4>
 Misal:
