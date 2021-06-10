@@ -8,6 +8,6 @@ class Customer extends Controller{
         //folder view
         $this->view('templates/header',$data);
         $this->view('customer/index');
-        $this->view('templates/footer',$data);
+        $this->view('templates/footer');
     }
 }
