@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row mb-3">
         <div class="col-lg-6">
-            <form action="" method="POST">
+            <form action="<?= BASEURL; ?>Customer/search" method="POST">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Cari Customer" name="keyword" id="keyword" autocomplete="off">
                     <button class="btn btn-outline-secondary" type="submit" id="tombolcari">Cari</button>

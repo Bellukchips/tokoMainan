@@ -52,4 +52,13 @@ class Customer extends Controller
             exit;
         }
     }
+    public function search(){
+         //passing data
+         $data['title'] = 'Customer';
+         $data['customer'] = $this->model('ModelCustomer')->searchCustomer();
+         //folder view
+         $this->view('templates/header', $data);
+         $this->view('customer/index', $data);
+         $this->view('templates/footer');
+    }
 }
