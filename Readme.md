@@ -6,7 +6,7 @@
 *Disclaimer*
 <h4>Jangan DiLetakan dalam folder lain</h4>
 Misal:
-- htdocs/abc/ -> letak folder
+- htdocs/abc/ -> letak folder <br>
 Harus di :
 - htdocs/ -> letak folder
 
@@ -20,7 +20,7 @@ Ubah BASEURL pada file
 - js/supplier.js
 - js/product.js
 
-Ubah BASEURL http://localhost/tokoMainan/public/
+Ubah BASEURL http://localhost/tokoMainan/public/  <br>
 Menjadi http://localhost/kuliah/tokoMainan/public/  -> Misal
 
 
