@@ -5,9 +5,9 @@
 
 *Disclaimer*
 <h4>Jangan DiLetakan dalam folder lain</h4>
-Misal:
+Misal: <br>
 - htdocs/abc/ -> letak folder <br>
-Harus di :
+Harus di :<br>
 - htdocs/ -> letak folder
 
 Jika Ingin meletakan di folder lain dalam htdocs
