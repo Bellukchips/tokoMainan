@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 10 Jun 2021 pada 09.59
+-- Waktu pembuatan: 11 Jun 2021 pada 05.59
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -40,12 +40,10 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`id`, `name`, `city`, `country`, `phone`) VALUES
-(11321, 'Jett', 'Bali', 'Indonesia', '081329887128'),
+(11321, 'Jett', 'Kuta Bali', 'Indonesia', '081329887128'),
 (11652, 'Raze', 'Bandung', 'Indonesia', '081383982117'),
 (11773, 'Sova', 'Tegal', 'Indonesia', '081332998772'),
-(11883, 'Dwi Candra', 'Kudus', 'Indonesia', '081329883992'),
-(11934, 'Astra', 'Jakarta', 'Indonesia', '081325889108'),
-(11985, 'Lukman', 'Slawi', 'Indonesia', '082872322323');
+(11883, 'Dwi Candra', 'Kudus', 'Indonesia', '081329883992');
 
 -- --------------------------------------------------------
 
@@ -65,10 +63,7 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`id`, `ord_date`, `cus_id`, `total_amount`) VALUES
-(28849, '2021-05-30', 11985, 240000),
-(199823, '2021-05-27', 11985, 120000),
 (758727, '2021-04-13', 11883, 8000000),
-(783613, '2021-04-05', 11934, 7800000),
 (783941, '2021-02-08', 11652, 5800000),
 (784269, '2021-03-09', 11773, 6450000),
 (798213, '2021-04-14', 11321, 9200000);
@@ -91,13 +86,10 @@ CREATE TABLE `tbl_orderitem` (
 --
 
 INSERT INTO `tbl_orderitem` (`id`, `ord_id`, `prod_id`, `quantity`) VALUES
-(37282, 28849, 23783, 2),
 (91231, 783941, 373648, 1),
 (91823, 798213, 312893, 1),
 (93434, 784269, 328379, 2),
-(96351, 783613, 387927, 3),
-(98373, 758727, 394848, 2),
-(99088, 199823, 23783, 1);
+(98373, 758727, 394848, 2);
 
 -- --------------------------------------------------------
 
@@ -198,14 +190,14 @@ ALTER TABLE `tbl_supplier`
 -- Ketidakleluasaan untuk tabel `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  ADD CONSTRAINT `tbl_order_ibfk_1` FOREIGN KEY (`cus_id`) REFERENCES `tbl_customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `tbl_order_ibfk_1` FOREIGN KEY (`cus_id`) REFERENCES `tbl_customer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tbl_orderitem`
 --
 ALTER TABLE `tbl_orderitem`
-  ADD CONSTRAINT `tbl_orderitem_ibfk_1` FOREIGN KEY (`ord_id`) REFERENCES `tbl_order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tbl_orderitem_ibfk_2` FOREIGN KEY (`prod_id`) REFERENCES `tbl_product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `tbl_orderitem_ibfk_1` FOREIGN KEY (`ord_id`) REFERENCES `tbl_order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_orderitem_ibfk_2` FOREIGN KEY (`prod_id`) REFERENCES `tbl_product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tbl_product`
