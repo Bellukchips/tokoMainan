@@ -48,6 +48,7 @@ class App
             
             //memisahkan url dari tanda (/)
             $url = explode('/',$url);
+            error_reporting(0);
             return $url;
         }
     }
