@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 11 Jun 2021 pada 05.59
+-- Waktu pembuatan: 12 Jun 2021 pada 08.47
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -203,7 +203,7 @@ ALTER TABLE `tbl_orderitem`
 -- Ketidakleluasaan untuk tabel `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  ADD CONSTRAINT `tbl_product_ibfk_1` FOREIGN KEY (`supplier_id`) REFERENCES `tbl_supplier` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `tbl_product_ibfk_1` FOREIGN KEY (`supplier_id`) REFERENCES `tbl_supplier` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
