@@ -16,7 +16,7 @@ harus mengubah BASEURL
 Ubah BASEURL pada file
 - config/config.php
 - js/customer.js
-- js/transaksi.js
+- js/transaction.js
 - js/supplier.js
 - js/product.js
 
