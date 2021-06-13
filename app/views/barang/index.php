@@ -44,8 +44,8 @@
                     <td><?= $produk['unit_price']; ?></td>
                     <td><?= $produk['package']; ?></td>
                     <td>
-                        <a href="<?= BASEURL; ?>Product/update/<?= $produk['id']; ?>" class="badge bg-warning float-start m-lg-1 tampilModalUpdate" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $produk['id'] ?>" style="text-decoration: none;">Ubah</a>
-                        <a href="<?= BASEURL; ?>Product/delete/<?= $produk['id']; ?>" class="badge bg-danger float-start m-lg-1" style="text-decoration: none;" onclick="return confirm('Ingin dihapus ?');">Hapus</a>
+                        <a href="<?= BASEURL; ?>Barang/update/<?= $produk['id']; ?>" class="badge bg-warning float-start m-lg-1 tampilModalUpdate" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $produk['id'] ?>" style="text-decoration: none;">Ubah</a>
+                        <a href="<?= BASEURL; ?>Barang/delete/<?= $produk['id']; ?>" class="badge bg-danger float-start m-lg-1" style="text-decoration: none;" onclick="return confirm('Ingin dihapus ?');">Hapus</a>
 
                     </td>
                 </tr>
@@ -65,13 +65,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="<?= BASEURL; ?>Product/insert" method="post">
+                <form action="<?= BASEURL; ?>Barang/insert" method="post">
                     <div class="mb-3">
                         <label for="id" class="form-label">ID</label>
                         <input type="number" class="form-control" id="id_prdk" name="id_prdk">
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nama Produk</label>
+                        <label for="prod_name" class="form-label">Nama Produk</label>
                         <input type="text" class="form-control" id="name_prdk" name="name_prdk">
                     </div>
                     <div class="mb-3">
@@ -84,7 +84,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="supplier_id" class="form-label">Supplier</label></label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" id="supplier_prdk" name="supplier_prdk" aria-label="Default select example">
                             <?php
                             foreach ($data['supplier'] as $supplier) :
                             ?>
