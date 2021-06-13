@@ -32,7 +32,7 @@ class ModelBarang
         $this->db->bind('supplier_id',$data['supplier_id_brg']);
         $this->db->bind('unit_price',$data['unit_price_brg']);
         $this->db->bind('package',$data['package_brg']);
-        $this->db->execute()
+        $this->db->execute();
 
         return $this->db->rowCount();
 
@@ -71,6 +71,7 @@ class ModelBarang
     {
         $query = "SELECT * FROM $this->tableJoin";
         $this->db->query($query);
+
         return $this->db->resultSet();
     }
 }

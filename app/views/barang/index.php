@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row mb-3">
         <div class="col-lg-6">
-            <form action="<?= BASEURL; ?>Customer/search" method="POST">
+            <form action="<?= BASEURL; ?>Barang/search" method="POST">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Cari Produk" name="keyword" id="keyword" autocomplete="off">
                     <button class="btn btn-outline-secondary" type="submit" id="tombolcari">Cari</button>
@@ -75,15 +75,15 @@
                         <input type="text" class="form-control" id="name_prdk" name="name_prdk">
                     </div>
                     <div class="mb-3">
-                        <label for="city" class="form-label">Harga (/unit)</label>
+                        <label for="unit_price" class="form-label">Harga (/unit)</label>
                         <input type="number" class="form-control" id="price_prdk" name="price_prdk">
                     </div>
                     <div class="mb-3">
-                        <label for="country" class="form-label">Jumlah Paket</label>
+                        <label for="package" class="form-label">Jumlah Paket</label>
                         <input type="number" class="form-control" id="package_prdk" name="package_prdk">
                     </div>
                     <div class="mb-3">
-                        <label for="Phone" class="form-label">Supplier</label></label>
+                        <label for="supplier_id" class="form-label">Supplier</label></label>
                         <select class="form-select" aria-label="Default select example">
                             <?php
                             foreach ($data['supplier'] as $supplier) :
