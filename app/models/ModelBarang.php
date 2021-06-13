@@ -24,7 +24,8 @@ class ModelBarang
         return $this->db->single();
     }
 
-    public function insertProduct(){
+    public function insertProduct($data)
+    {
         $query = "INSERT INTO $this->table VALUES (:id,:prod_name,:supplier_id,:unit_price,:package)";
         $this->db->query($query);
         $this->db->bind('id',$data['id_brg']);
@@ -35,16 +36,16 @@ class ModelBarang
         $this->db->execute();
 
         return $this->db->rowCount();
-
     }
-    public function updateProduct($data){
+    public function updateProduct($data)
+    {
         $query = "UPDATE $this->table SET prod_name=:prod_name,supplier_id=:supplier_id,unit_price=:unit_price,package=:package WHERE id=:id";
         $this->db->query($query);
-        $this->db->bind('prod_name',$data['prod_name_brg']);
-        $this->db->bind('supplier_id',$data['supplier_id_brg']);
-        $this->db->bind('unit_price',$data['unit_price_brg']);
-        $this->db->bind('package',$data['package_brg']);
-        $this->db->bind('id',$data['id_brg']);
+        $this->db->bind('prod_name', $data['prod_name_brg']);
+        $this->db->bind('supplier_id', $data['supplier_id_brg']);
+        $this->db->bind('unit_price', $data['unit_price_brg']);
+        $this->db->bind('package', $data['package_brg']);
+        $this->db->bind('id', $data['id_brg']);
         $this->db->execute();
 
         return $this->db->rowCount();
@@ -53,7 +54,7 @@ class ModelBarang
     {
         $query = "DELETE FROM $this->table WHERE id=:id";
         $this->db->query($query);
-        $this->db->bind('id',$id);
+        $this->db->bind('id', $id);
         $this->db->execute();
 
         return $this->db->rowCount();
@@ -63,8 +64,8 @@ class ModelBarang
         $keyword = $_POST['keyword'];
         $query = "SELECT * FROM $this->table WHERE name LIKE :keyword";
         $this->db->query($query);
-        $this->db->bind('keyword',"%$keyword%");
-        
+        $this->db->bind('keyword', "%$keyword%");
+
         return $this->db->resultSet();
     }
     public function getAllSupplier()

@@ -16,11 +16,12 @@ class Database
     {
         //data source name
         $dsn = "mysql:host=$this->host;dbname=$this->db_name";
-
+        
+        //parameter konfigurasi database
         $option = [
-
+            //untuk menjaga agar koneksi database terjaga terus #optimasi
             PDO::ATTR_PERSISTENT => true,
-            PDo::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 
         ];
         try {
@@ -30,12 +31,13 @@ class Database
         }
     }
 
+    //untuk menjalankan query
     public function query($query){
 
         $this->stmt = $this->dbh->prepare($query);
 
     }
-
+    
     public function bind($param,$value,$type=null){
         if(is_null($type)){
             switch(true){
