@@ -23,11 +23,8 @@ class ModelBarang
         $this->db->bind('id', $id);
         return $this->db->single();
     }
-    public function insertProduct()
-    {
-    }
     public function insertProduct(){
-        $query = "INSERT INTO $this->table VALUES (:id,:)"
+        $query = "INSERT INTO $this->table VALUES (:id,:)";
     }
     public function updateProduct($data){
 
