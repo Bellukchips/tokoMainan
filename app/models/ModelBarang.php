@@ -22,7 +22,7 @@ class ModelBarang{
     }
     }
     public function insertProduct(){
-
+        $query = "INSERT INTO $this->table VALUES (:id,:)"
     }
     public function updateProduct($data){
 
