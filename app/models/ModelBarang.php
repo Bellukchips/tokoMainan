@@ -13,7 +13,7 @@ class ModelBarang
 
     public function getAllProduct()
     {
-        $query = "SELECT * FROM $this->table JOIN $this->tableJoin ON $this->table.supplier_id=$this->tableJoin.id";
+        $query = "SELECT $this->table.id,$this->table.prod_name,$this->table.unit_price,$this->table.package,$this->tableJoin.companyName FROM $this->table JOIN $this->tableJoin ON $this->table.supplier_id=$this->tableJoin.id";
         $this->db->query($query);
         
         return $this->db->resultSet();
