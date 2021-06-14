@@ -53,7 +53,7 @@ class Barang extends Controller{
     public function search(){
         //passing data
         $data['title'] = 'Barang';
-        $data['barang'] = $this->model('ModelBarang')->searchBarang();
+        $data['barang'] = $this->model('ModelBarang')->searchProduct();
         //folder view
         $this->view('templates/header', $data);
         $this->view('barang/index', $data);
