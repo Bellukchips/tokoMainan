@@ -64,7 +64,7 @@ class ModelBarang
     public function searchProduct()
     {
         $keyword = $_POST['keyword'];
-        $query = "SELECT * FROM $this->table WHERE prod_name LIKE :keyword";
+        $query = "SELECT $this->table.id,$this->table.prod_name,$this->table.unit_price,$this->table.package,$this->tableJoin.companyName FROM $this->table JOIN $this->tableJoin ON $this->table.supplier_id=$this->tableJoin.id WHERE prod_name LIKE :keyword";
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
 
