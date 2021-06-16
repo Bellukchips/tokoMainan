@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 12 Jun 2021 pada 08.47
+-- Waktu pembuatan: 16 Jun 2021 pada 08.30
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -63,10 +63,11 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`id`, `ord_date`, `cus_id`, `total_amount`) VALUES
-(758727, '2021-04-13', 11883, 8000000),
+(121322, '2021-06-15', 11321, 240000),
+(134783, '2021-06-15', 11773, 780000),
+(187188, '2021-06-15', 11883, 1000000),
 (783941, '2021-02-08', 11652, 5800000),
-(784269, '2021-03-09', 11773, 6450000),
-(798213, '2021-04-14', 11321, 9200000);
+(784269, '2021-03-09', 11773, 6450000);
 
 -- --------------------------------------------------------
 
@@ -87,9 +88,10 @@ CREATE TABLE `tbl_orderitem` (
 
 INSERT INTO `tbl_orderitem` (`id`, `ord_id`, `prod_id`, `quantity`) VALUES
 (91231, 783941, 373648, 1),
-(91823, 798213, 312893, 1),
 (93434, 784269, 328379, 2),
-(98373, 758727, 394848, 2);
+(93435, 134783, 387927, 10),
+(93436, 187188, 322912, 2),
+(93437, 121322, 23783, 2);
 
 -- --------------------------------------------------------
 
@@ -110,13 +112,13 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id`, `prod_name`, `supplier_id`, `unit_price`, `package`) VALUES
+(10982, 'Iron Man Robot', 174910, 400000, 1000),
 (23783, 'Hot Wheels', 189272, 120000, 100),
 (312893, 'Figure Toys', 123267, 5300000, 15),
 (322912, 'Mobile Remote 4WD', 123267, 500000, 100),
 (328379, 'Lego', 193810, 125000, 90),
 (373648, 'Optimus Prime ', 174910, 8000000, 80),
-(387927, 'Puzzle', 188291, 78000, 80),
-(394848, 'Gundam Knight', 174910, 6000000, 10);
+(387927, 'Puzzle', 188291, 78000, 80);
 
 -- --------------------------------------------------------
 
@@ -137,12 +139,13 @@ CREATE TABLE `tbl_supplier` (
 --
 
 INSERT INTO `tbl_supplier` (`id`, `companyName`, `city`, `country`, `phone`) VALUES
-(123267, 'PT Jaya Abadi', 'Kendal', 'Indonesia', '082746182637'),
+(123267, 'PT Jaya Agung Wibawa', 'Kendal', 'Indonesia', '082746182637'),
 (123414, 'PT CK Jaya', 'Kudus', 'Indonesia', '081329337228'),
 (174910, 'PT Worksi Robot', 'Tangerang', 'Indonesia', '081329833211'),
 (188291, 'PT Setya Wijaya', 'Kudus', 'Indonesia', '081325468832'),
 (189272, 'PT Adi Toys', 'Semarang', 'Indonesia', '082746172461'),
-(193810, 'PT Fauke Oke', 'Bandung', 'Indonesia', '081932882917');
+(193810, 'PT Fauke Oke', 'Bandung', 'Indonesia', '081932882917'),
+(12312321, 'PT Sentosa Jaya', 'Kendal', 'Indonesia', '092875617121');
 
 --
 -- Indexes for dumped tables
@@ -181,6 +184,16 @@ ALTER TABLE `tbl_product`
 --
 ALTER TABLE `tbl_supplier`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_orderitem`
+--
+ALTER TABLE `tbl_orderitem`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93439;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
